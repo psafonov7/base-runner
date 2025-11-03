@@ -7,11 +7,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: psafonov7/cicd-toolkit/build-number@main
+      - uses: psafonov7/cicd-toolkit/build-name@docker
 
       - uses: psafonov7/cicd-toolkit/docker@docker
         with:
-          build_number: ${{ env.BUILD_NUMBER }}
+          build_number: ${{ env.BUILD_NAME }}
           push: true
           registry_username: ${{ secrets.DOCKER_USERNAME }}
           registry_token: ${{ secrets.DOCKER_TOKEN }}
