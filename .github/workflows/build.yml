@@ -5,13 +5,13 @@ jobs:
     container:
       image: cruizba/ubuntu-dind:latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
-      - uses: psafonov7/cicd-toolkit/build-name@docker
+      - uses: psafonov7/cicd-toolkit/build-info@docker
 
       - uses: psafonov7/cicd-toolkit/docker@docker
         with:
-          build_number: ${{ env.BUILD_NAME }}
+          build_number: ${{ env.BUILD_VERSION }}
           push: true
           registry_username: ${{ secrets.DOCKER_USERNAME }}
           registry_token: ${{ secrets.DOCKER_TOKEN }}
