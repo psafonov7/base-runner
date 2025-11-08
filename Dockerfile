@@ -16,7 +16,7 @@ RUN apt-get update && \
         python3 python3-pip && \
     git lfs install --system && \
     # Install yq (Go-based, from GitHub releases)
-    ARCH=$(dpkg --print-architecture | sed 's/amd64/x86_64/; s/arm64/aarch64/') && \
+    ARCH=$(dpkg --print-architecture) && \
     curl -L "https://github.com/mikefarah/yq/releases/download/${YQ_VERSION}/yq_linux_${ARCH}" \
       -o /usr/local/bin/yq && \
     chmod +x /usr/local/bin/yq && \
