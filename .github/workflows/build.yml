@@ -7,9 +7,9 @@ jobs:
     steps:
       - uses: actions/checkout@v5
 
-      - uses: psafonov7/cicd-toolkit/build-info@docker
+      - uses: psafonov7/cicd-toolkit/build-info@build-info-v1.0.0
 
-      - uses: psafonov7/cicd-toolkit/docker@docker
+      - uses: psafonov7/cicd-toolkit/docker@docker-v1.0.0
         with:
           build_number: ${{ env.BUILD_VERSION }}
           push: true
